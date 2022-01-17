@@ -1,0 +1,45 @@
+{% extends "base.html"%}{%load static %} {% load timetags %} {% load i18n %}
+%nbsp; {% block content %}
+
+<div class="container mt-5">
+  {% if subscription %}
+  <h4>Your subscription:</h4>
+
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">Free 7 days trial</p>
+      <p class="card-text">Price $49.99</p>
+      <p class="card-text">
+        Subscription started from
+        {{subscription.current_period_start|print_timestamp }}
+      </p>
+      <p class="card-text">
+        Subscription ends on &nbsp;
+        {{subscription.current_period_end|print_timestamp }}
+      </p>
+    </div>
+  </div>
+  <button
+    class="btn btn-danger"
+    id="cancel-subscription"
+    onclick="cancelSubscription('{{subscription.id}}');"
+    return
+    false;
+  >
+    Cancel subscription
+  </button>
+  {% else %}
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">Free 7 days trial</p>
+      <p class="card-text">Price $49.99</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" id="submitBtn">
+    Subscribe
+  </button>
+  {% endif %}
+</div>
+{% endblock %}

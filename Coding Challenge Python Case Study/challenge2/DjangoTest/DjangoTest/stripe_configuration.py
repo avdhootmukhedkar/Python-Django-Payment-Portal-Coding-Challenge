@@ -1,0 +1,5 @@
+"""Stripe credentials"""
+STRIPE_PUBLISHABLE_KEY = "pk_test_your_publishable_key"
+STRIPE_SECRET_KEY = "sk_test_your_secret_key"
+STRIPE_PRICE_ID = "price_your_price_id"
+STRIPE_ENDPOINT_SECRET = "whsec_your_endpoint_secret"

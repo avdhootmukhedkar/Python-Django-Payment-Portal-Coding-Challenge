@@ -1,0 +1,11 @@
+
+{% extends "base.html"%}{%load static %} {% load timetags %} {% load i18n %}
+%nbsp; {% block content %}
+
+<div class="container mt-5">
+  <p>You have successfully subscribed!</p>
+  <p><a href="{% url "subscriptions-home" %}">Return to the dashboard</a></p>
+</div>
+{% endblock %}
+
+  
